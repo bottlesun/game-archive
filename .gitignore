@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+_site/
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+# Local handoff notes include private project and chat context.
+/docs/monorepo-handoff.md

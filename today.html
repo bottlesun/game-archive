@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171126">
+  <meta name="description" content="오늘 플레이할 게임을 골라보세요.">
+  <title>TODAY'S GAME — PLAYROOM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=secret-breakout-1">
+  <script src="js/audio.js?v=secret-breakout-1" defer></script>
+  <script src="js/breakout.js?v=secret-breakout-1" defer></script>
+  <script src="js/main.js?v=secret-breakout-1" defer></script>
+</head>
+<body class="is-loading inner-page" data-page="today">
+<div class="page-loader" id="page-loader" role="status" aria-label="페이지를 불러오는 중">
+    <div class="loading-console">
+      <div class="loading-bar" aria-hidden="true"><div class="loading-fill" id="loading-fill"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <p>LOADING<span>...</span></p>
+    </div>
+  </div>
+  <div class="page-case">
+    <header class="pixel-header">
+      <a class="pixel-brand" href="index.html">◀ LOBBY</a>
+      <nav class="pixel-nav" aria-label="페이지 메뉴">
+        <a class="is-current" href="today.html" aria-current="page">TODAY</a>
+        <a href="games.html">GAMES</a>
+        <a href="history.html">HISTORY</a>
+      </nav>
+    </header>
+    <main class="inner-screen pick-screen" aria-labelledby="page-title">
+      <div class="sub-heading">
+        <p class="pixel-kicker">- RANDOM SELECT -</p>
+        <h1 class="page-title" id="page-title"><button class="secret-title glitch-title" id="secret-game-trigger" type="button">TODAY'S GAME<span class="glitch-copy" aria-hidden="true" data-text="TODAY'S GAME"></span></button></h1>
+        <p class="page-intro">오늘 플레이할 게임을 뽑아보세요.</p>
+      </div>
+
+      <section class="picker-panel" aria-label="오늘의 게임 슬롯">
+        <div class="picker-display">
+          <div class="reel-window" id="reel-window" aria-label="가운데 테두리와 화살표 사이에 멈춘 게임이 선택됩니다">
+            <div class="reel-roll" id="reel-roll"><p class="reel-loading">게임 목록을 불러오는 중...</p></div>
+            <section class="pick-result" id="today-result" aria-live="polite" hidden><div id="result-content"></div></section>
+          </div>
+          <p class="screen-message" id="screen-message" aria-live="polite">READY TO SPIN?</p>
+        </div>
+        <div class="picker-controls">
+          <button class="arcade-action spin-button" id="spin-button" type="button" aria-label="오늘의 게임 뽑기">SPIN <span aria-hidden="true">◀</span></button>
+          <div class="pick-confirm" id="pick-confirm" aria-label="선택한 게임을 플레이할까요?" hidden>
+            <a class="pick-answer is-selected" id="pick-yes" href="#" target="_blank" rel="noopener noreferrer">YES</a>
+            <button class="pick-answer" id="pick-no" type="button" aria-label="NO — 다시 뽑기">NO</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer class="pixel-footer"><span id="today-help">ENTER · SPIN</span><span>ESC · LOBBY</span></footer>
+  </div>
+  <dialog class="game-dialog breakout-dialog" id="breakout-dialog" aria-labelledby="breakout-title">
+    <div class="breakout-shell">
+      <header class="dialog-header"><h2 id="breakout-title">SECRET · BREAKOUT</h2><button class="pixel-brand" id="breakout-close" type="button" aria-label="벽돌깨기 닫기">CLOSE ×</button></header>
+      <div class="breakout-score"><span>SCORE <b id="breakout-score">00000</b></span><span>LIFE <b id="breakout-lives">♥ ♥ ♥</b></span></div>
+      <div class="breakout-stage"><canvas id="breakout-canvas" width="480" height="360" tabindex="0" aria-label="벽돌깨기. 좌우 방향키 또는 마우스·드래그로 패들을 움직이고 Enter 또는 화면 터치로 공을 발사합니다."></canvas></div>
+      <p class="breakout-status" id="breakout-status" role="status">숨겨진 스테이지를 찾았어요!</p>
+      <div class="breakout-controls"><button class="arcade-action" id="breakout-action" type="button">START</button><p>← → / MOUSE / DRAG<br>ENTER · LAUNCH / ESC · CLOSE</p></div>
+    </div>
+  </dialog>
+</body>
+</html>

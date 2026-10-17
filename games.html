@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171126">
+  <meta name="description" content="직접 만든 게임 프로젝트를 모아둔 진열장입니다.">
+  <title>GAME SHELF — PLAYROOM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=secret-breakout-1">
+  <script src="js/audio.js?v=secret-breakout-1" defer></script>
+  <script src="js/main.js?v=secret-breakout-1" defer></script>
+</head>
+<body class="is-loading inner-page" data-page="games">
+<div class="page-loader" id="page-loader" role="status" aria-label="페이지를 불러오는 중">
+    <div class="loading-console">
+      <div class="loading-bar" aria-hidden="true"><div class="loading-fill" id="loading-fill"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <p>LOADING<span>...</span></p>
+    </div>
+  </div>
+  <div class="page-case">
+    <header class="pixel-header">
+      <a class="pixel-brand" href="index.html">◀ LOBBY</a>
+      <nav class="pixel-nav" aria-label="페이지 메뉴">
+        <a href="today.html">TODAY</a>
+        <a class="is-current" href="games.html" aria-current="page">GAMES</a>
+        <a href="history.html">HISTORY</a>
+      </nav>
+    </header>
+    <main class="inner-screen shelf-screen" aria-labelledby="page-title">
+      <div class="sub-heading">
+        <p class="pixel-kicker">- MY GAME COLLECTION -</p>
+        <h1 class="page-title" id="page-title"><span class="glitch-title">SELECT GAME<span class="glitch-copy" aria-hidden="true" data-text="SELECT GAME"></span></span></h1>
+        <p class="page-intro">게임을 고르고 Enter로 자세히 살펴보세요.</p>
+      </div>
+      <div class="arcade-browser">
+        <section class="game-menu" aria-label="게임 메뉴">
+          <div class="menu-topline"><span>ALL GAMES</span><span id="game-count">03</span></div>
+          <div class="game-grid" id="game-grid" aria-label="게임 목록"></div>
+          <p class="menu-page">PAGE 01 / 01</p>
+        </section>
+        <section class="game-detail" id="game-detail" aria-live="polite" aria-label="선택한 게임 소개"></section>
+      </div>
+    </main>
+    <footer class="pixel-footer"><span>↑ ↓ SELECT · ENTER DETAILS</span><span>ESC · LOBBY</span></footer>
+  </div>
+  <dialog class="game-dialog" id="game-dialog" aria-labelledby="dialog-title">
+    <div class="game-dialog-shell">
+      <header class="dialog-header"><button class="pixel-brand" id="close-game-detail" type="button">◀ BACK</button><span>GAME INFO</span></header>
+      <div class="dialog-content" id="dialog-content"></div>
+      <footer class="dialog-footer"><a class="arcade-action" id="start-selected-game" target="_blank" rel="noopener noreferrer">START GAME <span aria-hidden="true">◀</span></a><span>ESC · BACK TO LIST</span></footer>
+    </div>
+  </dialog>
+</body>
+</html>

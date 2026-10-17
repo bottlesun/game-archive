@@ -3,11 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Game Archive</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#4c4a87">
+  <meta name="description" content="내가 만든 게임을 플레이할 준비가 되었나요?">
+  <title>START — PLAYROOM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=secret-breakout-1">
+  <script src="js/audio.js?v=secret-breakout-1" defer></script>
+  <script src="js/main.js?v=secret-breakout-1" defer></script>
 </head>
-<body>
-  <!-- 게임 아카이브 화면은 다음 단계에서 구현합니다. -->
-  <script src="js/main.js"></script>
+<body class="is-loading start-page">
+<div class="page-loader" id="page-loader" role="status" aria-label="페이지를 불러오는 중">
+    <div class="loading-console">
+      <div class="loading-bar" aria-hidden="true"><div class="loading-fill" id="loading-fill"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <p>LOADING<span>...</span></p>
+    </div>
+  </div>
+  <main class="title-stage" aria-labelledby="start-title">
+    <a class="lobby-history" href="history.html">HISTORY</a>
+    <div class="date-score" id="date-score">
+      <p>TODAY’S HI-SCORE</p>
+      <time id="today-score">00000000</time>
+      <span class="score-record" aria-hidden="true">NEW RECORD!</span>
+    </div>
+    <div class="title-content">
+      <h1 id="start-title"><span class="title-eyebrow">- MY GAME -</span><span class="title-main glitch-title">START<span class="glitch-copy" aria-hidden="true" data-text="START"></span></span><span class="title-arcade glitch-title">ARCADE<span class="glitch-copy" aria-hidden="true" data-text="ARCADE"></span></span></h1>
+      <nav class="choice-list" aria-label="시작 메뉴">
+        <a class="choice-link is-selected" href="today.html" aria-label="YES — 오늘의 게임 뽑기">YES</a>
+        <a class="choice-link" href="games.html" aria-label="NO — 게임 진열장">NO</a>
+      </nav>
+    </div>
+    <p class="start-caption">← → SELECT <span>·</span> ENTER START</p>
+  </main>
 </body>
 </html>
