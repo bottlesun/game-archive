@@ -316,6 +316,7 @@ async function renderTodayPick(game) {
   todayResult.hidden = false;
   spinButton.hidden = true;
   document.querySelector("#pick-confirm").hidden = false;
+  document.querySelector("#pick-loading-notice").hidden = false;
   selectPickAnswer(0);
   screenMessage.textContent = "이 게임을 플레이할까요?";
   document.querySelector("#today-help").textContent = "← → SELECT · ENTER CONFIRM";
@@ -326,6 +327,7 @@ async function spinAgain(games) {
   if (spinButton.disabled) return;
   spinButton.disabled = true;
   document.querySelector("#pick-confirm").hidden = true;
+  document.querySelector("#pick-loading-notice").hidden = true;
   todayResult.hidden = true;
   document.querySelector("#reel-roll").hidden = false;
   screenMessage.textContent = "다시 뽑아볼게요!";

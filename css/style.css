@@ -327,3 +327,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cream); outline
   .breakout-controls { padding-bottom: 6px; }
   .breakout-controls p { display: none; }
 }
+
+/* Small notices share the arcade's muted body type. */
+.game-loading-notice { flex: none; max-width: 620px; margin: 16px 0 0; color: #ad94b3; font: 11px/1.7 var(--font-ui); text-align: center; word-break: keep-all; }
+.game-loading-notice[hidden] { display: none; }
+.lobby-notice { display: block; max-width: 620px; margin: 8px auto 0; color: #947b9d; font: 10px/1.6 var(--font-ui); word-break: keep-all; }
+@media (max-width: 480px) {
+  .game-loading-notice { margin-top: 12px; font-size: 10px; }
+  .lobby-notice { font-size: 9px; }
+}
