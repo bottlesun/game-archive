@@ -336,3 +336,32 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cream); outline
   .game-loading-notice { margin-top: 12px; font-size: 10px; }
   .lobby-notice { font-size: 9px; }
 }
+
+/* Native fourth game: compact canvas stage and readable HTML controls. */
+.survivor-case { max-width: 880px; }
+.survivor-screen { display: flex; flex-direction: column; align-items: center; min-height: 0; gap: 12px; }
+.survivor-heading { text-align: center; flex: none; }
+.survivor-heading .pixel-kicker { margin: 0 0 10px; }
+.survivor-heading .page-title { font-size: clamp(16px, 3.5vw, 28px); }
+.survivor-hud { display: flex; flex: none; justify-content: space-between; gap: 12px; width: min(640px, 100%); color: #ad94b3; font: clamp(6px, 1.5vw, 9px)/1.8 var(--font-pixel); }
+.survivor-hud b { display: block; color: var(--cream); font-weight: 400; font-size: 1.4em; font-variant-numeric: tabular-nums; }
+.survivor-field { position: relative; display: grid; place-items: center; flex: 1; min-height: 0; width: 100%; overflow: hidden; }
+#survivor-canvas { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; aspect-ratio: 4 / 3; background: #100b1b; border: 1px solid #67435f; image-rendering: pixelated; touch-action: none; }
+.survivor-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; background: #100b1bd9; text-align: center; pointer-events: none; }
+.survivor-overlay[hidden] { display: none; }
+.survivor-overlay .pixel-kicker { color: #5ef2ce; margin-bottom: 14px; }
+.survivor-overlay h2 { margin: 0; color: #ffe77c; font-size: clamp(21px, 4vw, 32px); text-shadow: 2px 3px #813b61; }
+.survivor-overlay > p:last-child { color: #c3aebf; font-size: 12px; line-height: 1.9; }
+.survivor-bottom { flex: none; text-align: center; }
+.survivor-bottom p { margin: 0; color: #c3aebf; font-size: 11px; line-height: 1.6; }
+.survivor-bottom button { font-size: 11px; }
+@media (max-height: 600px) {
+  .survivor-case { height: 100svh; min-height: 0; padding: 12px 18px; gap: 8px; }
+  .survivor-heading .pixel-kicker { display: none; }
+  .survivor-heading .page-title { font-size: 16px; }
+  .survivor-screen { gap: 6px; }
+  .survivor-bottom button { min-height: 32px; padding: 6px; }
+}
+
+.pick-result.is-bonus .result-label { color: #5ef2ce; text-shadow: 1px 2px #22584f; }
+.pick-result.is-bonus { box-shadow: inset 0 0 0 1px #5ef2ce99, inset 0 0 35px #5ef2ce0c; }

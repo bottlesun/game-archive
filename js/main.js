@@ -185,7 +185,9 @@ function renderGames(games) {
       <h3 class="dialog-section-title">HOW TO PLAY</h3>
       <ul class="dialog-features">${game.features.map((feature) => `<li>${feature}</li>`).join("")}</ul>
     `;
-    document.querySelector("#start-selected-game").href = game.url;
+    const start = document.querySelector("#start-selected-game");
+    start.href = game.url;
+    start.target = /^https?:/.test(game.url) ? "_blank" : "_self";
     dialog.showModal();
     document.querySelector("#dialog-content").scrollTop = 0;
     document.querySelector("#close-game-detail").focus({ preventScroll: true });
@@ -241,7 +243,7 @@ function renderGames(games) {
 }
 
 function initSubpageKeys() {
-  if (!document.body.classList.contains("inner-page")) return;
+  if (!document.body.classList.contains("inner-page") || document.body.dataset.page === "survivor") return;
   window.addEventListener("keydown", (event) => {
     if (event.altKey || event.ctrlKey || event.metaKey || document.querySelector("#game-dialog")?.open || document.querySelector("#breakout-dialog")?.open) return;
     if (event.key === "Escape") {
@@ -299,10 +301,11 @@ async function setPickerExpanded(expanded) {
 }
 
 async function renderTodayPick(game) {
+  todayResult.classList.toggle("is-bonus", Boolean(game.rouletteOnly));
   resultContent.innerHTML = `
     <div class="result-art"><img src="${game.thumbnail}" alt="${game.title} 게임 화면"></div>
     <div class="result-copy">
-      <p class="result-label">TODAY'S PICK</p>
+      <p class="result-label">${game.rouletteOnly ? "BONUS GAME!" : "TODAY'S PICK"}</p>
       <h2 class="result-game-title"><span class="glitch-title">${game.title}<span class="glitch-copy" aria-hidden="true" data-text="${game.title}"></span></span></h2>
       <p class="result-genre">${game.genre}</p>
       <p class="result-game-description">${game.description}</p>
@@ -310,6 +313,7 @@ async function renderTodayPick(game) {
   `;
   const yes = document.querySelector("#pick-yes");
   yes.href = game.url;
+  yes.target = /^https?:/.test(game.url) ? "_blank" : "_self";
   yes.setAttribute("aria-label", `YES — ${game.title} 플레이`);
   await setPickerExpanded(true);
   document.querySelector("#reel-roll").hidden = true;
@@ -318,7 +322,7 @@ async function renderTodayPick(game) {
   document.querySelector("#pick-confirm").hidden = false;
   document.querySelector("#pick-loading-notice").hidden = false;
   selectPickAnswer(0);
-  screenMessage.textContent = "이 게임을 플레이할까요?";
+  screenMessage.textContent = game.rouletteOnly ? "보너스 게임 발견! 60초 생존에 도전할까요?" : "이 게임을 플레이할까요?";
   document.querySelector("#today-help").textContent = "← → SELECT · ENTER CONFIRM";
   yes.focus({ preventScroll: true });
 }
@@ -385,7 +389,7 @@ function spin(games) {
   }
 
   spinAnimation.onfinish = async () => {
-    window.arcadeAudio?.finishSpin();
+    window.arcadeAudio?.finishSpin(Boolean(selected.rouletteOnly));
     reelTrack.style.transform = `translateY(-${endOffset}px)`;
     spinAnimation.cancel();
     reelTrack.classList.remove("is-spinning");
@@ -407,7 +411,7 @@ async function init() {
     const response = await fetch("data/games.json", { cache: "no-store" });
     if (!response.ok) throw new Error("게임 목록을 불러오지 못했습니다.");
     const games = await response.json();
-    renderGames(games);
+    renderGames(games.filter((game) => !game.rouletteOnly));
     renderReels(games);
     if (spinButton) {
       spinButton.addEventListener("click", () => spin(games));

@@ -61,5 +61,23 @@
       "url": "https://github.com/bottlesun/cso-turnbased-roguelike/pull/1",
       "commit": "8fd8776877067b529fd74e91ba7b2571a37602f2"
     }
+  },
+  {
+    "id": "neon-survivor",
+    "title": "네온 서바이버",
+    "englishTitle": "NEON SURVIVOR",
+    "genre": "탄막 생존 액션",
+    "description": "네온 탄막을 피해 60초 동안 살아남는 도트 생존 게임.",
+    "thumbnail": "assets/images/neon-survivor-thumbnail.svg",
+    "url": "neon-survivor.html",
+    "overview": "작은 우주선의 파일럿이 되어 사방에서 날아오는 탄막을 피하세요. 시간이 지날수록 공격이 거세집니다. 보호막과 감속 아이템을 활용해 60초를 버티고 최고 기록에 도전하세요.",
+    "features": [
+      "방향키·WASD 또는 마우스·터치 드래그로 이동합니다. 기체 중앙의 작은 점에 탄이 닿으면 피격됩니다.",
+      "보호막은 한 번의 피격을 막고, 감속 아이템은 4초 동안 탄의 속도를 낮춥니다. 보호막 1회로 시작합니다.",
+      "생존 시간과 아이템으로 점수를 얻습니다. 60초 생존하면 클리어하며 최고 점수는 이 브라우저에 저장됩니다.",
+      "Enter로 시작·재도전하고 Esc 또는 PAUSE로 일시 정지합니다. 탭을 벗어나면 자동으로 멈춥니다."
+    ],
+    "firstDeployedAt": null,
+    "rouletteOnly": true
   }
 ]

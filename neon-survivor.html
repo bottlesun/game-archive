@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171126">
+  <meta name="description" content="네온 탄막을 피해 60초 동안 살아남으세요. 설치 없이 바로 즐기는 도트 생존 게임.">
+  <title>네온 서바이버 | 게임 아카이브</title>
+  <meta name="application-name" content="게임 아카이브">
+  <meta name="author" content="bottlesun">
+  <link rel="canonical" href="https://bottlesun.github.io/game-archive/neon-survivor.html">
+  <link rel="icon" type="image/svg+xml" href="assets/site/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site/favicon-32.png">
+  <link rel="shortcut icon" href="assets/site/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/site/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="게임 아카이브">
+  <meta property="og:title" content="네온 서바이버 | 게임 아카이브">
+  <meta property="og:description" content="네온 탄막을 피해 60초 동안 살아남으세요. 설치 없이 바로 즐기는 도트 생존 게임.">
+  <meta property="og:url" content="https://bottlesun.github.io/game-archive/neon-survivor.html">
+  <meta property="og:image" content="https://bottlesun.github.io/game-archive/assets/site/og-cover.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="노랑·분홍 픽셀 글씨 START ARCADE와 게임 아카이브 로고">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="네온 서바이버 | 게임 아카이브">
+  <meta name="twitter:description" content="네온 탄막을 피해 60초 동안 살아남으세요. 설치 없이 바로 즐기는 도트 생존 게임.">
+  <meta name="twitter:image" content="https://bottlesun.github.io/game-archive/assets/site/og-cover.png">
+  <meta name="twitter:image:alt" content="게임 아카이브 — START ARCADE">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=roulette-bonus-1">
+  <script src="js/audio.js?v=roulette-bonus-1" defer></script>
+  <script src="js/main.js?v=roulette-bonus-1" defer></script>
+  <script src="js/neon-survivor.js?v=neon-survivor-1" defer></script>
+</head>
+<body class="is-loading inner-page" data-page="survivor">
+<div class="page-loader" id="page-loader" role="status" aria-label="페이지를 불러오는 중">
+    <div class="loading-console">
+      <div class="loading-bar" aria-hidden="true"><div class="loading-fill" id="loading-fill"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <p>LOADING<span>...</span></p>
+    </div>
+  </div>
+  <div class="page-case survivor-case">
+    <header class="pixel-header">
+      <a class="pixel-brand" href="games.html">◀ GAMES</a>
+      <nav class="pixel-nav" aria-label="페이지 메뉴"><a href="index.html">LOBBY</a><a href="today.html">TODAY</a><a href="history.html">HISTORY</a></nav>
+    </header>
+    <main class="survivor-screen" aria-labelledby="page-title">
+      <div class="survivor-heading"><p class="pixel-kicker">- SURVIVE FOR 60 SECONDS -</p><h1 class="page-title" id="page-title"><span class="glitch-title">NEON SURVIVOR<span class="glitch-copy" aria-hidden="true" data-text="NEON SURVIVOR"></span></span></h1></div>
+      <div class="survivor-hud" aria-label="게임 기록"><span>TIME <b id="survivor-time">60.0</b></span><span>SCORE <b id="survivor-score">00000</b></span><span>BEST <b id="survivor-best">00000</b></span></div>
+      <div class="survivor-field">
+        <canvas id="survivor-canvas" width="640" height="480" tabindex="0" aria-label="탄막 피하기 게임. 방향키 또는 WASD로 이동하거나 화면을 드래그하세요. 기체 중심의 작은 점이 판정 영역입니다."></canvas>
+        <div class="survivor-overlay" id="survivor-overlay"><p class="pixel-kicker" id="survivor-result-label">READY, PILOT?</p><h2 id="survivor-result-title">60초를 버텨라</h2><p id="survivor-result-copy">중심의 작은 점을 지키세요.<br>분홍 탄막을 피하고 보호막과 감속 아이템을 모으세요.</p></div>
+      </div>
+      <div class="survivor-bottom"><p id="survivor-status" role="status">보호막 1회로 시작 · ◇ 보호막 / ⏱ 4초 감속</p><button class="arcade-action" id="survivor-action" type="button">START GAME ◀</button></div>
+    </main>
+    <footer class="pixel-footer"><span>← ↑ ↓ → / WASD / DRAG</span><span>ENTER · START / ESC · PAUSE</span></footer>
+  </div>
+</body>
+</html>

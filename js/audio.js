@@ -80,11 +80,12 @@
       };
       spinFrame = requestAnimationFrame(roll);
     },
-    finishSpin() {
+    finishSpin(bonus = false) {
       cancelAnimationFrame(spinFrame);
       if (!context || muted || document.hidden) return;
       const time = context.currentTime;
-      [79, 83, 88].forEach((pitch, index) => note(pitch, time + index * .075, .2, .25));
+      const melody = bonus ? [76, 79, 83, 88, 83, 88, 91] : [79, 83, 88];
+      melody.forEach((pitch, index) => note(pitch, time + index * .075, bonus ? .25 : .2, .25));
     },
   };
   let lastEffect = 0;
