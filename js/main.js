@@ -161,6 +161,15 @@ function initStartMenu() {
 
 function renderGames(games) {
   if (!gameGrid) return;
+  document.querySelector("#game-count").textContent = padNumber(games.length);
+  if (!games.length) {
+    gameGrid.innerHTML = '<p class="page-intro">아직 등록된 게임이 없습니다.</p>';
+    document.querySelector("#game-detail").innerHTML = '<p class="pixel-kicker">COMING SOON</p><p class="page-intro">새로운 게임으로 다시 만나요.</p>';
+    document.querySelector(".shelf-screen .page-intro").textContent = "새로운 게임을 준비하고 있습니다.";
+    document.querySelector(".pixel-footer span").textContent = "COMING SOON";
+    document.querySelector(".game-loading-notice").hidden = true;
+    return;
+  }
 
   gameGrid.innerHTML = games.map((game, index) => `
     <button class="game-choice" type="button" aria-label="${game.title}" aria-pressed="false">
@@ -243,7 +252,7 @@ function renderGames(games) {
 }
 
 function initSubpageKeys() {
-  if (!document.body.classList.contains("inner-page") || document.body.dataset.page === "survivor") return;
+  if (!document.body.classList.contains("inner-page")) return;
   window.addEventListener("keydown", (event) => {
     if (event.altKey || event.ctrlKey || event.metaKey || document.querySelector("#game-dialog")?.open || document.querySelector("#breakout-dialog")?.open) return;
     if (event.key === "Escape") {
@@ -267,6 +276,14 @@ function initSubpageKeys() {
 function renderReels(games) {
   const reelWindow = document.querySelector("#reel-window");
   if (!reelWindow) return;
+  if (!games.length) {
+    document.querySelector("#reel-roll").innerHTML = '<p class="reel-loading">COMING SOON</p>';
+    screenMessage.textContent = "아직 등록된 게임이 없습니다.";
+    spinButton.disabled = true;
+    document.querySelector(".pick-screen .page-intro").textContent = "새로운 게임을 준비하고 있습니다.";
+    document.querySelector("#today-help").textContent = "COMING SOON";
+    return;
+  }
 
   document.querySelector("#reel-roll").innerHTML = '<div class="reel-track"></div><div class="reel-target" aria-hidden="true"><span>▶</span><span>◀</span></div>';
   reelTrack = reelWindow.querySelector(".reel-track");
@@ -410,10 +427,10 @@ async function init() {
   try {
     const response = await fetch("data/games.json", { cache: "no-store" });
     if (!response.ok) throw new Error("게임 목록을 불러오지 못했습니다.");
-    const games = await response.json();
+    const games = (await response.json()).filter((game) => !game.hidden);
     renderGames(games.filter((game) => !game.rouletteOnly));
     renderReels(games);
-    if (spinButton) {
+    if (spinButton && games.length) {
       spinButton.addEventListener("click", () => spin(games));
       document.querySelector("#pick-no").addEventListener("click", () => spinAgain(games));
       document.querySelectorAll(".pick-answer").forEach((answer, index) => {
