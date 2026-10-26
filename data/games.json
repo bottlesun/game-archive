@@ -1,5 +1,22 @@
 [
   {
+    "id": "stellarcade",
+    "title": "스텔라아케이드",
+    "englishTitle": "STELLARCADE",
+    "genre": "비공식 팬게임 아케이드",
+    "description": "별을 따라 게임을 고르는 스텔라이브 비공식·비상업 팬게임 공간.",
+    "thumbnail": "assets/images/stellarcade-thumbnail.jpg",
+    "url": "https://stellarcade.bottlesun3514.workers.dev/",
+    "overview": "라벤더빛 별들이 흐르는 로비에서 팬게임을 골라보세요. 현재 린의 파란 별에서는 숫자 합이 10인 사각형을 찾는 퍼즐 ‘사카밤바스피스’를 플레이할 수 있습니다. 스텔라이브의 공식 제작·운영 콘텐츠가 아닌 개인 팬 프로젝트입니다.",
+    "features": [
+      "로비의 파란 별이나 게임 목록에서 사카밤바스피스를 선택해 플레이합니다. 다른 준비 중인 게임은 안내만 표시합니다.",
+      "사카밤바스피스는 마우스·터치로 사각형을 선택하고 숫자 합이 10인 영역의 물고기를 제거하는 퍼즐입니다.",
+      "2분 안에 높은 점수에 도전하세요. 한 번에 많은 물고기를 제거하면 보너스 점수를 얻고 최고 기록은 현재 브라우저에 저장됩니다.",
+      "키보드는 Tab과 Enter·Space로 선택하며, 게임 중 Esc로 일시 정지할 수 있습니다."
+    ],
+    "firstDeployedAt": null
+  },
+  {
     "id": "neon-survivor",
     "title": "네온 서바이버",
     "englishTitle": "NEON SURVIVOR",
