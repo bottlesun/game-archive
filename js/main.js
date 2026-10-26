@@ -429,10 +429,11 @@ async function init() {
     if (!response.ok) throw new Error("게임 목록을 불러오지 못했습니다.");
     const games = (await response.json()).filter((game) => !game.hidden);
     renderGames(games.filter((game) => !game.rouletteOnly));
-    renderReels(games);
-    if (spinButton && games.length) {
-      spinButton.addEventListener("click", () => spin(games));
-      document.querySelector("#pick-no").addEventListener("click", () => spinAgain(games));
+    const rouletteGames = games.filter((game) => !game.shelfOnly);
+    renderReels(rouletteGames);
+    if (spinButton && rouletteGames.length) {
+      spinButton.addEventListener("click", () => spin(rouletteGames));
+      document.querySelector("#pick-no").addEventListener("click", () => spinAgain(rouletteGames));
       document.querySelectorAll(".pick-answer").forEach((answer, index) => {
         answer.addEventListener("focus", () => selectPickAnswer(index));
         answer.addEventListener("pointerenter", () => selectPickAnswer(index));

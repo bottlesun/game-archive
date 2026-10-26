@@ -1,18 +1,35 @@
 [
   {
     "id": "stellarcade",
-    "title": "스텔라아케이드",
+    "title": "스텔라아케이드 : 메인",
     "englishTitle": "STELLARCADE",
     "genre": "비공식 팬게임 아케이드",
-    "description": "별을 따라 게임을 고르는 스텔라이브 비공식·비상업 팬게임 공간.",
+    "description": "별을 따라 비공식 팬게임을 고르는 스텔라아케이드 메인 로비.",
     "thumbnail": "assets/images/stellarcade-thumbnail.jpg",
     "url": "https://stellarcade.bottlesun3514.workers.dev/",
     "overview": "라벤더빛 별들이 흐르는 로비에서 팬게임을 골라보세요. 현재 린의 파란 별에서는 숫자 합이 10인 사각형을 찾는 퍼즐 ‘사카밤바스피스’를 플레이할 수 있습니다. 스텔라이브의 공식 제작·운영 콘텐츠가 아닌 개인 팬 프로젝트입니다.",
     "features": [
-      "로비의 파란 별이나 게임 목록에서 사카밤바스피스를 선택해 플레이합니다. 다른 준비 중인 게임은 안내만 표시합니다.",
-      "사카밤바스피스는 마우스·터치로 사각형을 선택하고 숫자 합이 10인 영역의 물고기를 제거하는 퍼즐입니다.",
-      "2분 안에 높은 점수에 도전하세요. 한 번에 많은 물고기를 제거하면 보너스 점수를 얻고 최고 기록은 현재 브라우저에 저장됩니다.",
-      "키보드는 Tab과 Enter·Space로 선택하며, 게임 중 Esc로 일시 정지할 수 있습니다."
+      "로비의 파란 별이나 게임 목록을 열어 플레이할 게임을 선택합니다.",
+      "현재 사카밤바스피스를 플레이할 수 있으며, 준비 중인 항목은 안내만 표시합니다.",
+      "마우스·터치와 키보드로 게임을 선택할 수 있습니다. 게임별 규칙과 조작은 각 게임에서 안내합니다."
+    ],
+    "firstDeployedAt": null,
+    "shelfOnly": true
+  },
+  {
+    "id": "stellarcade-sakabambaspis",
+    "title": "스텔라아케이드 : 사카밤바스피스",
+    "englishTitle": "STELLARCADE · SAKABAMBASPIS",
+    "genre": "합 10 찾기 퍼즐",
+    "description": "2분 동안 숫자 합이 10인 사각형을 찾아 물고기를 모으는 퍼즐.",
+    "thumbnail": "assets/images/sakabambaspis-thumbnail.jpg",
+    "url": "https://stellarcade.bottlesun3514.workers.dev/sakabambaspis-game/",
+    "overview": "맹한 사카밤바스피스들과 함께 합이 10인 사각형을 찾아보세요. 10×10 숫자판에서 마우스나 터치로 영역을 선택해 물고기를 제거하고, 2분 안에 높은 점수에 도전하는 비공식·비상업 팬게임입니다.",
+    "features": [
+      "마우스·터치로 시작 칸부터 끝 칸까지 드래그해 사각형을 선택합니다. 숫자 합이 10이면 물고기가 제거됩니다.",
+      "이미 비어 있는 칸도 영역에 포함할 수 있습니다. 한 번에 많은 물고기를 제거하면 보너스 점수를 얻습니다.",
+      "키보드는 Tab으로 칸을 이동하고 Enter·Space로 시작 칸과 끝 칸을 선택합니다.",
+      "Esc 또는 일시정지 버튼으로 멈출 수 있습니다. 최고 기록은 현재 브라우저에 저장됩니다."
     ],
     "firstDeployedAt": null
   },
