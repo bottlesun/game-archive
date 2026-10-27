@@ -39,8 +39,8 @@
     "englishTitle": "STELLARCADE · SAVE ME, NANA!",
     "genre": "원버튼 와이어 러너",
     "description": "점프와 와이어로 지붕을 달리며 공주 페토를 구하는 스파이 나나의 추격전.",
-    "thumbnail": "assets/images/save-me-nana-thumbnail.webp",
-    "url": "https://stellarcade.bottlesun3514.workers.dev/%ED%8E%98%ED%86%A0%EB%A5%BC%EA%B5%AC%ED%95%98%EB%9D%BC/",
+    "thumbnail": "assets/images/save-me-nana-og-v1.webp",
+    "url": "https://stellarcade.bottlesun3514.workers.dev/save-me-nana/",
     "overview": "자동으로 달리는 스파이 나나를 한 버튼으로 조작하세요. 점프와 와이어로 지붕 사이를 건너고 당근을 모으며 여섯 구역 끝의 은신처에서 공주 페토를 구하는 비공식·비상업 팬게임입니다. 구출·추격 이야기는 프로젝트의 창작 설정입니다.",
     "features": [
       "화면 클릭·탭 또는 Space·Enter로 점프합니다. 공중에서 다시 누르면 앞쪽 대각선 위로 갈고리를 발사합니다.",

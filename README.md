@@ -68,7 +68,7 @@ python3 -m http.server 4181 --bind 127.0.0.1
 - 실행 주소: https://stellarcade.bottlesun3514.workers.dev/
 - 스텔라이브 비공식·비상업 팬게임 선택 로비입니다.
 - 사카밤바스피스: 2분 동안 숫자 합이 10인 사각형을 찾는 퍼즐입니다.
-- 구해줘, 나나!: 점프·와이어로 여섯 구역을 돌파하는 원버튼 러너입니다. 썸네일은 해당 게임의 현재 로비 이미지 `peto-lobby-square-v4-lime.webp`를 사용합니다.
+- 구해줘, 나나!: 점프·와이어로 여섯 구역을 돌파하는 원버튼 러너입니다. 썸네일은 해당 게임의 OG 이미지 `save-me-nana-thumbnail-v1.webp`를 사용합니다.
 - 썸네일은 해당 프로젝트의 `assets/brand/stellarcade-og-card.jpg`를 사용합니다. 게임 규칙은 프로젝트 README와 운영 배포 기록을 기준으로 등록했습니다.
 
 메인 로비는 `shelfOnly: true`로 룰렛에서 제외합니다. 개별 게임을 선택하면 메인 로비를 거치지 않고 게임 페이지로 바로 이동합니다.
